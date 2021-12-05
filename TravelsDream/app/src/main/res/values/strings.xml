@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Travel\'s Dream</string>
+    <string name="Wellcome">Bienvenido</string>
+    <string name="EmailEnter">Ingrese Correo</string>
+    <string name="PassWEnter">Ingrese Contraseña</string>
+    <string name="Name">Ingrese Nombre</string>
+    <string name="LastName">Ingrese apellido</string>
+    <string name="Phone">Ingrese Telefono</string>
+    <string name="SingIn">Ingresar</string>
+    <string name="NewUser2">Crear Usuario?</string>
+    <string name="NewUser1">¿Desea</string>
+    <string name="UserCreate">Crear Nuevo Usuario</string>
+    <string name="PassWConfirm">Confirme Contraseña</string>
+    <string name="Btn_SingUp">Registrar</string>
+</resources>
