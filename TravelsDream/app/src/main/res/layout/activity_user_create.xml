@@ -22,7 +22,6 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="20dp"
             android:text="@string/UserCreate"
             android:textAlignment="center"
             android:textAllCaps="false"
@@ -31,10 +30,24 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/Nick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="@string/Nick"
+            android:inputType="textPersonName"
+            android:padding="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:backgroundTint="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/Tx_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/Name"
             android:inputType="textPersonName"
@@ -48,7 +61,7 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/Tx_LastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -63,11 +76,11 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/Tx_Mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/Phone"
+            android:hint="@string/Mobile"
             android:inputType="phone"
             android:padding="20dp"
             android:textAlignment="center"
@@ -78,7 +91,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/Tx_EmailNU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -93,7 +106,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/Tx_PassWordNU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -108,7 +121,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextTextPassword2"
+            android:id="@+id/Tx_CPassWordNU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -122,13 +135,46 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_margin="20dp"
-            android:text="@string/Btn_SingUp"
-            app:cornerRadius="20dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/RBM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mochilero"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:buttonTint="@color/white"
+                    />
+
+                <RadioButton
+                    android:id="@+id/RBP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/proveedor"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:buttonTint="@color/white"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:onClick="UserCreat"
+                android:text="@string/Btn_SingUp"
+                app:cornerRadius="20dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

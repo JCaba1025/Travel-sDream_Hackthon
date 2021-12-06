@@ -12,4 +12,13 @@
     <string name="UserCreate">Crear Nuevo Usuario</string>
     <string name="PassWConfirm">Confirme Contraseña</string>
     <string name="Btn_SingUp">Registrar</string>
+    <string name="Nick">Ingrese Usuario</string>
+    <string name="Mobile">Ingrese Celular</string>
+    <string name="ActivityList">Listado de Actividades</string>
+    <string name="NameAct">Nombre Actividad</string>
+    <string name="Descrip">Descripción</string>
+    <string name="proveedor">Proveedor</string>
+    <string name="mochilero">Mochilero</string>
+    <string name="Departament">Departamento:</string>
+    <string name="Municipio">Municipio:</string>
 </resources>

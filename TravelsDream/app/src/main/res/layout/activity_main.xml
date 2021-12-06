@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/Tx_Email"
+            android:id="@+id/Tx_EmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -61,7 +61,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/Tx_PassW"
+            android:id="@+id/Tx_PassWLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -108,6 +108,7 @@
                 android:layout_weight="1"
                 android:background="#6AF3FBEF"
                 android:gravity="end"
+                android:onClick="goToCreate"
                 android:text="@string/NewUser2"
                 android:textAlignment="textEnd"
                 android:textColor="@color/purple_700"
