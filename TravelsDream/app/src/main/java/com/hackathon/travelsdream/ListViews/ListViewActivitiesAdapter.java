@@ -17,8 +17,6 @@ import com.hackathon.travelsdream.model.Actividad;
 
 import java.util.ArrayList;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class ListViewActivitiesAdapter extends ArrayAdapter<Actividad> {
 
     ArrayList<Actividad> Act;
