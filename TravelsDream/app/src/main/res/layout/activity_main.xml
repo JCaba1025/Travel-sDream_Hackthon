@@ -74,16 +74,48 @@
             app:backgroundTint="@color/white"
             android:textSize="24sp" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_margin="30dp"
-            android:gravity="center"
-            android:text="@string/SingIn"
-            android:textAlignment="center"
-            app:cornerRadius="25dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <RadioButton
+                    android:id="@+id/RBMo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mochilero"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:buttonTint="@color/white"
+                    />
+
+                <RadioButton
+                    android:id="@+id/RBPr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/proveedor"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:buttonTint="@color/white"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_margin="30dp"
+                android:gravity="center"
+                android:onClick="singIn"
+                android:text="@string/SingIn"
+                android:textAlignment="center"
+                app:cornerRadius="25dp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

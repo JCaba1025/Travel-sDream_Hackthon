@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="6"
-        android:background="@color/secondaryColor"
         android:elevation="30dp"
         android:orientation="vertical">
 
@@ -21,7 +20,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="@string/ActivityList"
-            android:textColor="@color/secondaryTextColor"
+            android:textColor="@color/primaryTextColor"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -37,7 +36,7 @@
             android:layout_height="match_parent">
 
             <ListView
-                android:id="@+id/Lv_Equipament"
+                android:id="@+id/Lv_Actividades"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/activities_list_row"></ListView>
@@ -51,7 +50,7 @@
                 android:layout_marginBottom="20dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:onClick="goToCreateEquip"
+                android:onClick="goToCreateAct"
                 app:srcCompat="@android:drawable/ic_input_add" />
 
 

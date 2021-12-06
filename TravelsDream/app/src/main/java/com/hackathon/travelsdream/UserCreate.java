@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -62,36 +61,38 @@ public class UserCreate extends AppCompatActivity {
                             "VALUES ('"+Nick_S+"','"+name_S+"','"+lastname_S+"','"+email_S+"','"+mobile_S+"','"+passW_S+"')";
 
                     boolean success = DBConection.insertData(insert_query);
+
                     if (success) {
                         Toast.makeText(this, "Persona guardado con éxito", Toast.LENGTH_LONG).show();
-                        Intent goToEquip = new Intent(this, ListActividadesView.class);
-                        startActivity(goToEquip);
+                        Intent goToAct = new Intent(this, ListActividadesView.class);
+
+                        String sentence = "SELECT*FROM mochileros WHERE nick = ?";
+                        String[] params = new String[]{Nick_S};
+
+                        Cursor result = DBConection.getData(sentence,params);
+                        result.moveToFirst();
+
+                        int idM = result.getInt(0);
+
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("mochileros");
+
+                        myRef.child("Mochilero_" + email_S).child("id").setValue(idM);
+                        myRef.child("Mochilero_" + email_S).child("nick").setValue(Nick_S);
+                        myRef.child("Mochilero_" + email_S).child("name").setValue(name_S);
+                        myRef.child("Mochilero_" + email_S).child("lastName").setValue(lastname_S);
+                        myRef.child("Mochilero_" + email_S).child("email").setValue(email_S);
+                        myRef.child("Mochilero_" + email_S).child("mobile").setValue(mobile_S);
+                        myRef.child("Mochilero_" + email_S).child("passWord").setValue(passW_S);
+
+                        startActivity(goToAct);
+
                     } else {
                         Toast.makeText(this, "Error al guardar la persona", Toast.LENGTH_LONG).show();
                     }
 
-                    String sentence = "SELECT*FROM mochileros WHERE nick = ?";
-                    String[] params = new String[]{Nick_S};
-
-                    Cursor result = DBConection.getData(sentence,params);
-                    result.moveToFirst();
-
-                    int idM = result.getInt(0);
-
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference("mochileros");
-
-                    myRef.child("Mochilero_" + idM).child("nick").setValue(Nick_S);
-                    myRef.child("Mochilero_" + idM).child("name").setValue(name_S);
-                    myRef.child("Mochilero_" + idM).child("lastName").setValue(lastname_S);
-                    myRef.child("Mochilero_" + idM).child("email").setValue(email_S);
-                    myRef.child("Mochilero_" + idM).child("mobile").setValue(mobile_S);
-                    myRef.child("Mochilero_" + idM).child("passWord").setValue(passW_S);
-
                 } else {
-
                     Toast.makeText(this, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
-
                 }
 
             }else if (RBP.isChecked()) {
@@ -105,7 +106,7 @@ public class UserCreate extends AppCompatActivity {
                     boolean success = DBConection.insertData(insert_query);
                     if (success) {
                         Toast.makeText(this, "Persona guardado con éxito", Toast.LENGTH_LONG).show();
-                        Intent goToEquip = new Intent(this, ListActividadesView.class);
+                        Intent goToAct = new Intent(this, ListActividadesView.class);
 
                         String sentence = "SELECT*FROM proveedores WHERE nick = ?";
                         String[] params = new String[]{Nick_S};
@@ -118,30 +119,28 @@ public class UserCreate extends AppCompatActivity {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         DatabaseReference myRef = database.getReference("proveedores");
 
-                        myRef.child("Proveedor_" + idP).child("nick").setValue(Nick_S);
-                        myRef.child("Proveedor_" + idP).child("name").setValue(name_S);
-                        myRef.child("Proveedor_" + idP).child("lastName").setValue(lastname_S);
-                        myRef.child("Proveedor_" + idP).child("email").setValue(email_S);
-                        myRef.child("Proveedor_" + idP).child("mobile").setValue(mobile_S);
-                        myRef.child("Proveedor_" + idP).child("passWord").setValue(passW_S);
+                        myRef.child("Proveedor_" + email_S).child("nick").setValue(idP);
+                        myRef.child("Proveedor_" + email_S).child("nick").setValue(Nick_S);
+                        myRef.child("Proveedor_" + email_S).child("name").setValue(name_S);
+                        myRef.child("Proveedor_" + email_S).child("lastName").setValue(lastname_S);
+                        myRef.child("Proveedor_" + email_S).child("email").setValue(email_S);
+                        myRef.child("Proveedor_" + email_S).child("mobile").setValue(mobile_S);
+                        myRef.child("Proveedor_" + email_S).child("passWord").setValue(passW_S);
 
-                        startActivity(goToEquip);
+                        startActivity(goToAct);
+
                     } else {
                         Toast.makeText(this, "Error al guardar la persona", Toast.LENGTH_LONG).show();
                     }
 
                 } else {
-
                     Toast.makeText(this, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
-
                 }
 
             }
 
         }else{
-
             Toast.makeText(this, "Debe Completar todos los campos", Toast.LENGTH_SHORT).show();
-
         }
 
     }

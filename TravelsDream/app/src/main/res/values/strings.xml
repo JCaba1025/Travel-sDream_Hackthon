@@ -19,6 +19,10 @@
     <string name="Descrip">Descripción</string>
     <string name="proveedor">Proveedor</string>
     <string name="mochilero">Mochilero</string>
-    <string name="Departament">Departamento:</string>
-    <string name="Municipio">Municipio:</string>
+    <string name="Departament">Ingrese Departamento</string>
+    <string name="Municipio">Ingrese Municipio</string>
+    <string name="NewActivity">Crear Nueva Actividad</string>
+    <string name="InNameAct">Nombre de la Actividad</string>
+    <string name="ExactPlace">Ingrese lugar exacto</string>
+    <string name="Price">Ingrese Precio</string>
 </resources>

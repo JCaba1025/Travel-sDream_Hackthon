@@ -9,5 +9,9 @@
         android:bottom="10dp"/>
     <stroke
         android:width="2dp"
-        android:color="@color/secondaryDarkColor"/>
+        android:color="@color/white"/>
+    <gradient
+
+        android:centerColor="@color/primaryColor"/>
+
 </shape>
